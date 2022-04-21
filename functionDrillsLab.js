@@ -11,7 +11,9 @@
   Call the function.
 */
 
-//CODE HERE
+function helloWorld(){
+  console.log('Hello, World!');
+} helloWorld()
 
 
 ////////////////// PROBLEM 2 ////////////////////
@@ -20,7 +22,10 @@
     Write an arrow function called 'jsNinja' that returns the string: 'I am a JavaScript ninja!'
 */
 
-//CODE HERE
+ let jsNinja = () => {
+  return('I am a JavaScript ninja!');
+} 
+jsNinja()
 
 
 ////////////////// PROBLEM 3 ////////////////////
@@ -30,7 +35,12 @@
   Call the function, passing in an argument.
 */
 
-//CODE HERE
+
+function printName(name){
+  console.log(name);
+}
+printName('John');
+
 
 
 ////////////////// PROBLEM 4 ////////////////////
@@ -44,7 +54,10 @@
   Make sure to call your function and pass in an argument.
 */
 
-//CODE HERE
+function greeting(name){
+  let strName = name.toString();
+  console.log('Hello' + ' ' + strName);
+} greeting('John');
 
 
 ////////////////// PROBLEM 5 ////////////////////
@@ -58,8 +71,22 @@
     Brownie points if you use a ternary statement (only spend significant time on this if you have wiggle room)
 */
 
-//CODE HERE
+let compareNumsA = (a, b) => {
+  if (a>b){
+    return(a);
+  }else if (a === b){
+    return(a);
+  } else{
+    return(b);
+  }
+} 
+console.log(compareNumsA(5,1));
 
+//**TERNARY OPERATOR**
+let compareNumsB = (c, d) =>{
+  return (c >d ? c : d)
+} 
+console.log(compareNumsB(5,1));
 
 ////////////////// PROBLEM 6 ////////////////////
 /*
@@ -69,7 +96,10 @@
   Create a variable outside the function called 'sum' and set it equal to add invoked (called), passing in 2 arguments.
 */
 
-//CODE HERE
+function add (x, y){
+  return(parseInt(x) + parseInt(y));
+}
+console.log(add('2',100));
 
 
 ////////////////// PROBLEM 7 ////////////////////
@@ -85,7 +115,7 @@ const exclaim = function(str) {
 
 // arrow
 // declaration
-// expression
+let exclaimAnswer = 'expression';
 
 
 
@@ -100,7 +130,7 @@ const exclaimTwo = str => {
   return str.toUpperCase() + '!!!'
 }
 
-// arrow
+let exclaimTwoAnswer = 'arrow';
 // declaration
 // expression
 
@@ -125,7 +155,7 @@ function exclaimFour(str) {
 }
 
 // arrow
-// declaration
+let exclaimFourAnswer = 'declaration';
 // expression
 
 
@@ -138,8 +168,15 @@ function exclaimFour(str) {
   Create a variable called 'nameGreeting' and set it equal to your function invoked (called) passing in an argument.
 */
 
-//CODE HERE
-
+function nameCheck(nameP){
+  if(nameP === 'Steven'){
+    return('What is up Steven?');
+  } else if (nameP === 'Bryan'){
+    return('Hey Bryan!');
+  } else{
+    return(`Cool name, ${nameP}!`);
+  }
+} console.log(nameCheck('Bryan'));
 
 ////////////////// PROBLEM 11 ////////////////////
 /*
@@ -151,18 +188,27 @@ function exclaimFour(str) {
   Create a variable called 'colorRating' and set it equal to faveColorFinder invoked (called), passing in an argument.
 */
 
-//CODE HERE
+ function faveColorFinder(color){
+   return color === 'red' ? 'Red is a great color'
+    : color === 'green' ? 'Green is a solid favorite color'
+    : color === 'black' ? 'So trendy'
+    : 'You need to evaluate your favorite color choice' 
+   
+ } console.log(faveColorFinder('blue'));
 
 
 ////////////////// PROBLEM 12 ////////////////////
-let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
+let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl'];
 /*
   Create a function called printAllNames that takes in a single argument (an array of names).
   Using a for loop, iterate over that array and console log each name.
   Call the function, passing in the `namesArr` array (above).
 */
 
-//CODE HERE
+// function printAllNames(n){
+//   for (i=0; i<namesArr.length; i++)
+
+// }
 
 
 ////////////////// PROBLEM 13 ////////////////////
