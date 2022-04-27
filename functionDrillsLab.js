@@ -106,8 +106,9 @@ console.log(compareNumsC(100,801));
 
 function add (x, y){
   return(parseInt(x) + parseInt(y));
-}
-console.log(add('2',100));
+} 
+let sum = add('2',100);
+console.log(sum);
 
 
 ////////////////// PROBLEM 7 ////////////////////
@@ -176,15 +177,17 @@ let exclaimFourAnswer = 'declaration';
   Create a variable called 'nameGreeting' and set it equal to your function invoked (called) passing in an argument.
 */
 
-function nameCheck(nameP){
-  if(nameP === 'Steven'){
+function nameCheck(name){
+  if(name === 'Steven'){
     return('What is up Steven?');
-  } else if (nameP === 'Bryan'){
+  } else if (name === 'Bryan'){
     return('Hey Bryan!');
   } else{
-    return(`Cool name, ${nameP}!`);
+    return(`Cool name, ${name}!`);
   }
-} console.log(nameCheck('Bryan'));
+} 
+console.log(nameCheck('Bryan'));
+
 
 ////////////////// PROBLEM 11 ////////////////////
 /*
@@ -213,13 +216,11 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl'];
   Call the function, passing in the `namesArr` array (above).
 */
 
-
 function printAllNames(namesArr){
   for (i=0; i<namesArr.length; i++){
     console.log(namesArr[i]);
-  } return printAllNames;
-} 
-
+  } 
+} return printAllNames(['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl'])
 
 ////////////////// PROBLEM 13 ////////////////////
 /*
