@@ -71,22 +71,30 @@ function greeting(name){
     Brownie points if you use a ternary statement (only spend significant time on this if you have wiggle room)
 */
 
-let compareNumsA = (a, b) => {
-  if (a>b){
-    return(a);
-  }else if (a === b){
-    return(a);
+let compareNumsA = (num1, num2) => {
+  if (num1 > num2){
+    return(num1);
+  }else if (num2 < num1){
+    return(num2);
   } else{
-    return(b);
+    return(num2);
   }
 } 
-console.log(compareNumsA(5,1));
+console.log(compareNumsA(601,1));
 
 //**TERNARY OPERATOR**
 let compareNumsB = (c, d) =>{
   return (c >d ? c : d)
 } 
-console.log(compareNumsB(5,1));
+console.log(compareNumsB(100,701));
+
+//**Using Math.max**
+
+const compareNumsC = (numC, numD) => {
+  return Math.max(numC, numD);
+}; 
+console.log(compareNumsC(100,801));
+
 
 ////////////////// PROBLEM 6 ////////////////////
 /*
@@ -205,10 +213,12 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl'];
   Call the function, passing in the `namesArr` array (above).
 */
 
-// function printAllNames(n){
-//   for (i=0; i<namesArr.length; i++)
 
-// }
+function printAllNames(namesArr){
+  for (i=0; i<namesArr.length; i++){
+    console.log(namesArr[i]);
+  } return printAllNames;
+} 
 
 
 ////////////////// PROBLEM 13 ////////////////////
