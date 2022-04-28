@@ -54,10 +54,11 @@ printName('John');
   Make sure to call your function and pass in an argument.
 */
 
+//**Why is name not being converted to string//
 function greeting(name){
-  let strName = name.toString();
+  name = String(name);
   console.log('Hello' + ' ' + strName);
-} greeting('John');
+} greeting();
 
 
 ////////////////// PROBLEM 5 ////////////////////
@@ -216,11 +217,14 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl'];
   Call the function, passing in the `namesArr` array (above).
 */
 
-function printAllNames(namesArr){
-  for (i=0; i<namesArr.length; i++){
+function printAllNames(names){
+  for (i=0; i<names.length; i++){
     console.log(namesArr[i]);
   } 
-} return printAllNames(['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl'])
+} 
+printAllNames(namesArr)
+
+
 
 ////////////////// PROBLEM 13 ////////////////////
 /*
@@ -231,6 +235,15 @@ function printAllNames(namesArr){
 */
 
 //CODE HERE
+function thatsOdd(num){
+  if (num % 2 === 0){
+    return "That's not odd!";
+  } else {
+    return "That is odd indeed!";
+  }
+}
+const oddChecker = thatsOdd(21);
+console.log(oddChecker);
 
 
 ////////////////// PROBLEM 14 ////////////////////
@@ -244,6 +257,12 @@ function printAllNames(namesArr){
 */
 
 //CODE HERE
+
+const bestMovie = movieParam => {
+  
+  return movieParam + " is the best movie ever!"
+}
+console.log(bestMovie('Toy Story'));
 
 
 ////////////////// PROBLEM 15 ////////////////////
@@ -259,6 +278,20 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 
 //CODE HERE
 
+function bigOrSmall(arr){
+  let answers = []
+  
+  for(i=0; i<arr.length; i++);
+    if(arr[i] > 100){
+      answers.push('big')
+    } else if (arr[i] <= 100){
+      answers.push('small');
+    }
+    return answers;
+} 
+
+let arrayEvaluator = bigOrSmall(bigOrSmallArray)
+
 
 ////////////////// PROBLEM 16 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
@@ -270,6 +303,18 @@ let loser = 'Glimmer'
 
 //CODE HERE
 
+// HELP
+function theEliminator(arr, str){
+
+  for (i = 0; i<arr.length; i++){
+    if(arr[i]=== str){
+      arr.splice(i,1);
+     
+    } 
+  }  return arr;
+
+} console.log(theEliminator(['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel'], 'Rue'))
+
 
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo."
@@ -280,6 +325,10 @@ let sampleString = "Hi, my name is Kylo."
 
 //CODE HERE
 
+function convertToUppercase(x){
+  console.log(x.toUpperCase())
+} 
+return convertToUppercase('You like kicking butts old man!?')
 
 ////////////////// PROBLEM 18 ////////////////////
 /*
@@ -292,6 +341,16 @@ let sampleString = "Hi, my name is Kylo."
   return 'must provide a valid email address'
 */
 
+// CHECK
+function emailCheck(email){
+  email = String(email).trim();
+  if (email.includes('@')){
+    return 'email verified'
+  } else {
+    return 'must provide a valid email address'  }
+} 
+
+
 ////////////////// PROBLEM 19 ////////////////////
 /*
   Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
@@ -301,6 +360,13 @@ let sampleString = "Hi, my name is Kylo."
 //CODE HERE
 
 
+function chocoFrogs(myGold){
+  let purchasedFrogs = myGold / 3;
+  return Math.floor(purchasedFrogs);  
+} 
+let totalFrogs= chocoFrogs(1001);
+console.log(totalFrogs);
+
 ////////////////// PROBLEM 20 ////////////////////
 /*
   You might have noticed a slight bug in the previous problem. If you were to pass in 4 gold, the function would return to you 1.3333... However, you can't really go to a store and by 1.333 products. You would just be able to purchase 1 product. Re-write the function you used in the previous problem (give it the same name, just add a 2 to the end of it) that fixes this bug. Invoke the function and store the returned value to a variable called `totalFrogs2`.
@@ -308,6 +374,12 @@ let sampleString = "Hi, my name is Kylo."
 
 //CODE HERE
 
+function chocoFrogs(myGold){
+  let purchasedFrogs = myGold / 3;
+  return Math.floor(purchasedFrogs);  
+} 
+let totalFrogs= chocoFrogs(1001);
+console.log(totalFrogs);
 
 ////////////////// PROBLEM 21 ////////////////////
 let sampleArray = [0,1,2,3,4,7,5,6,8,9]
@@ -317,7 +389,28 @@ let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 
 //CODE HERE
 
+function numArray(arr){
+  return arr.every(function (x, i) {
+         return i === 0 || x >= arr[i - 1];
+     });
+ } 
+ let arrayIsAscending = numArray([0,1,2,3,4,7,5,6,8,9]);
+ console.log(arrayIsAscending);
 
+//  function checkArrayAscending(arr) {
+//   let comparisonValue = arr[0]
+//   for (let i = 1; i < arr.length - 1; i++) {
+//     if (arr[i] <= comparisonValue) {
+//       return false
+//     } else {
+//       comparisonValue = arr[i]
+//     }
+//   }
+//   return true
+// }
+
+// let arrayIsAscending = checkArrayAscending(sampleArray)
+ 
 ////////////////// PROBLEM 22 ////////////////////
 
 let duck = "cute";
@@ -339,14 +432,27 @@ function pond() {
   Given the functions and variables above, edit the arrays below to contain only the appropriate variable names (as strings).
 */
 
+let duck = "cute";
+
+function bathroom() {
+  let rubberDuck = "squeaky";
+  function bathtub() {
+    let sailorDuck = "nautical";
+  }
+}
+
+function pond() {
+  let realDuck = "fluffy";
+}
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
-
+let globalScope = ["duck"]
+console.log(globalScope)
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
-
+let bathroomScope = ["duck", "rubberDuck"]
+console.log(bathroomScope)
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
-
+let bathtubScope = ["duck", "sailorDuck", "rubberDuck"]
+console.log(bathtubScope)
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ["duck", "realDuck"]
+console.log(pondScope)
